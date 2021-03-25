@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main mission -5</title>
+    <title>Main mission -7</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
         integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel='stylesheet' href='./scss/app.css' /> 
@@ -110,17 +110,22 @@
     <section class="main-content bg-gray-300">
       <!-- 搜尋區 -->
       <div class="container py-xxs-11">
-        <div class="search-area d-flex align-items-center pb-xxs-11">
-          <span class="searchValue d-none">地區搜尋</span>
-          <select name="" class="regionSearch mr-xxs-9 rounded-sm">
-            <option value="地區搜尋" disabled selected hidden>地區搜尋</option>
-            <option value="全部地區">全部地區</option>
-            <option value="台北">台北</option>
-            <option value="台中">台中</option>
-            <option value="高雄">高雄</option>
-            <option value="台南">台南</option>
-          </select>
-          <p id="searchResult-text" class="text-gray-600 text-xxs-xs">本次搜尋共 3 筆資料</p>
+        <div class="row">
+          <div class="search-area d-flex align-items-start pb-xxs-11 col-12 col-md-8">
+            <span class="searchValue d-none">地區搜尋</span>
+            <select name="" class="regionSearch mr-xxs-9 rounded-sm" onChange="selectChange(this.value)">
+              <option value="地區搜尋" disabled selected hidden>地區搜尋</option>
+              <option value="全部地區">全部地區</option>
+              <option value="台北">台北</option>
+              <option value="台中">台中</option>
+              <option value="高雄">高雄</option>
+              <option value="台南">台南</option>
+            </select>
+            <p id="searchResult-text" class="text-gray-600 text-xxs-xs">本次搜尋共 3 筆資料</p>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="donutChart text-center mb-xxs-5"></div>
+          </div>
         </div>
         <!-- 套票卡片區 -->
         <ul class="ticketCard-area row">
@@ -133,6 +138,8 @@
       </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="./js/c3.min.js"></script>
+    <script src="./js/d3-5.8.2.min.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

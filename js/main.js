@@ -44,13 +44,9 @@ submit.addEventListener('click',(e)=>{
     cardInit(false);
 })
 
-regionSearch.addEventListener('click', (e)=>{
-    let select = regionSearch.value;
-    if(select){
-      searchValue.textContent = e.toElement.value;
-      getData(e.toElement.value, true);
-    }
-})
+function selectChange(select){
+  getData(select, true);
+}
 
 function checkInput(){
   let alert = document.querySelectorAll('.alert-message');
@@ -141,6 +137,8 @@ function getData(target, state){
       }
   });
 
+  renderDountChart(data)
+
   if(state == true){
     searchResultText.classList.remove('d-none');
     searchResultText.classList.add('d-block');
@@ -154,4 +152,44 @@ function getData(target, state){
     searchResultFail.classList.remove('d-block');
     searchResultFail.classList.add('d-none');
   }
+}
+
+
+// render C3
+function renderDountChart(data){
+  let renderData = []
+  let obj = {}
+
+  data.forEach(item => obj[item.area] == undefined ? obj[item.area] = 1 : obj[item.area] += 1)
+
+  let area = Object.keys(obj)
+
+  area.forEach(item=>{
+    let ary = []
+    ary.push(item)
+    ary.push(obj[item])
+    renderData.push(ary)
+  })
+
+  let chart = c3.generate({
+    bindto: '.donutChart',
+    data: {
+        columns: renderData,
+        type : 'donut',
+        onclick: function (d, i) { console.log("onclick", d, i); },
+        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+    },
+    size:{
+      width: 200,
+      height: 200
+    },
+    donut: {
+        title: "套票地區比重",
+        width: 15,
+        label: {
+          show: false
+        }
+    }
+});
 }
