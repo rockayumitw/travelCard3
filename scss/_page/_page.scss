@@ -1,0 +1,53 @@
+.addTicket-panel {
+    max-width: 920px;
+    box-shadow: 0px 3px 6px $gray-100;
+    margin: 100px 0px;
+}
+.main-content {
+    .regionSearch {
+        padding: 8px 12px;
+        width: 225px;
+    }
+    .ticketCard-area {
+        max-width: 1110px;
+        box-shadow: $shadow;
+    }
+    .ticketCard {
+        max-width: 350px;
+        box-shadow: 0px 3px 6px $gray-100;
+        cursor: pointer;
+        @include media-max(lg) {
+            max-width: 100%;
+        }
+        .ticketCard-description{
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+        }
+        .ticketCard-img {
+            @include media-max(lg) {
+                height: auto;
+            }
+            a {
+                display: block;
+                overflow: hidden;
+                height: 180px;
+            }
+            img {
+                width: 100%;
+                transition: .3s;
+                transform: scale(1);
+            }
+        }
+        &:hover{
+            .ticketCard-img{
+                img{
+                    transition: .3s;
+                    transform: scale(1.5);
+                }
+            }
+        }
+    }
+}

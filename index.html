@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main mission -5</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel='stylesheet' href='./scss/app.css' /> 
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+  </head>
+  <body>
+    <section class="addTicket-panel d-xxs-block d-md-flex align-items-center justify-content-center px-xxs-10 py-xxs-11 px-lg-13 py-lg-12 mx-auto rounded-lg">
+      <div class="addTicket-img pb-xs-6 mx-auto ">
+        <img src="./images/1.png" alt="">
+        <img class="d-none d-md-block" src="./images/2.png" alt="">
+      </div>
+      <form action="" class="addTicket-form">
+        <h1 class="title text-xxs-left text-xxs-md lh-xxs-lg text-teal border-bottom mb-xxs-10"><span>
+          <i class="fas fa-plus-circle"></i></span>
+          新增旅遊套票
+        </h1>
+        <div class="form-group">
+          <div class="addTicket-input d-flex align-items-center">
+            <label for="ticketName" class="text-teal pr-xxs-8 pr-md-10 font-weight-bold">套票名稱</label>
+            <input type="text" id="ticketName" placeholder="請填寫套票名稱" name="套票名稱">
+          </div>
+          <div class="alert-message text-xxs-base text-danger">
+            <p id="ticketName-message" class="d-none" data-message="套票名稱">
+                 <i class="fas fa-exclamation-circle mr-xxs-3"></i><span>必填!</span>
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="addTicket-input d-flex align-items-center">
+            <label for="ticketImgUrl" class="text-teal pr-xs-10 font-weight-bold">圖片網址</label>
+            <input type="text" id="ticketImgUrl" placeholder="請填寫圖片網址" name="圖片網址">
+          </div>
+          <div class="alert-message text-xxs-base text-danger">
+            <p id="ticketImgUrl-message" class="d-none" data-message="圖片網址">
+              <i class="fas fa-exclamation-circle mr-xxs-3"></i><span>必填!</span>
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="addTicket-input d-flex align-items-center">
+            <label for="ticketRegion" class="text-teal pr-xs-10 font-weight-bold">景點地區</label>
+            <select id="ticketRegion" name="景點地區">
+              <option value="" disabled selected hidden>選擇景點</option>
+              <option value="台北">台北</option>
+              <option value="台中">台中</option>
+              <option value="高雄">高雄</option>
+            </select>
+          </div>
+          <div class="alert-message text-xxs-base text-danger">
+            <p id="ticketRegion-message" class="d-none" data-message="景點地區">
+              <i class="fas fa-exclamation-circle mr-xxs-3"></i><span>必填!</span>
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="addTicket-input d-flex align-items-center">
+            <label for="ticketPrice" class="text-teal pr-xs-10 font-weight-bold">套票金額</label>
+            <input type="number" id="ticketPrice" placeholder="請填寫套票金額" name="套票金額" min="0">
+          </div>
+          <div class="alert-message text-xxs-base text-danger">
+            <p id="ticketPrice-message" class="d-none" data-message="套票金額">
+              <i class="fas fa-exclamation-circle mr-xxs-3"></i><span>必填!金額不能為0以下</span>
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="addTicket-input d-flex align-items-center">
+            <label for="ticketNum" class="text-teal pr-xs-10 font-weight-bold">套票組數</label>
+            <input type="number" id="ticketNum" placeholder="請填寫套票組數" name="套票組數" min="1">
+          </div>
+          <div class="alert-message text-xxs-base text-danger">
+            <p id="ticketNum-message" class="d-none" data-message="套票組數">
+              <i class="fas fa-exclamation-circle mr-xxs-3"></i><span>必填!套票組數不能為0以下</span>
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="addTicket-input d-flex align-items-center">
+            <label for="ticketRate" class="text-teal pr-xs-10 font-weight-bold">套票星級</label>
+            <input type="number" id="ticketRate" placeholder="請填寫套票星級" name="套票星級" min="1" max="10">
+          </div>
+          <div class="alert-message text-xxs-base text-danger">
+            <p id="ticketRate-message" class="d-none" data-message="套票星級">
+              <i class="fas fa-exclamation-circle mr-xxs-3"></i><span>必填!評分限定1-10分</span>
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="addTicket-input d-flex align-items-center">
+            <label for="ticketDescription" class="text-teal pr-xs-10 font-weight-bold">套票描述</label>
+            <textarea name="套票描述" id="ticketDescription" maxLength="100" placeholder="請填寫套票描述 (限 100 字)"></textarea>
+          </div>
+          <div class="alert-message text-xxs-base text-danger">
+            <p id="ticketDescription-message" class="d-none" data-message="套票描述">
+              <i class="fas fa-exclamation-circle mr-xxs-3"></i><span>必填!</span>
+            </p>
+          </div>
+        </div>
+        <div class="text-xxs-center text-md-right">
+          <input type="button" id="submit" class="btn btn-xs btn-teal" value="新增套票">
+        </div>
+      </form>
+    </section>
+
+    <section class="main-content bg-gray-300">
+      <!-- 搜尋區 -->
+      <div class="container py-xxs-11">
+        <div class="search-area d-flex align-items-center pb-xxs-11">
+          <span class="searchValue d-none">地區搜尋</span>
+          <select name="" class="regionSearch mr-xxs-9 rounded-sm">
+            <option value="地區搜尋" disabled selected hidden>地區搜尋</option>
+            <option value="全部地區">全部地區</option>
+            <option value="台北">台北</option>
+            <option value="台中">台中</option>
+            <option value="高雄">高雄</option>
+            <option value="台南">台南</option>
+          </select>
+          <p id="searchResult-text" class="text-gray-600 text-xxs-xs">本次搜尋共 3 筆資料</p>
+        </div>
+        <!-- 套票卡片區 -->
+        <ul class="ticketCard-area row">
+        </ul>
+        <!-- 查無關鍵字區 -->
+        <div class="searchResultFail text-center">
+          <h3 class="mb-xs-10">查無此關鍵字資料</h3>
+          <img src="./images/9.png" alt="">
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
